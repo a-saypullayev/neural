@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#212121"><title>Neural</title>
+<link rel="stylesheet" href="/static/style.css?v=clean-ui-20261103">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-top"><a class="brand" href="#"><span class="brand-mark">✳</span><span>Neural</span></a><button class="icon-btn mobile-close" id="closeSidebar">×</button></div>
+  <button class="new-chat" id="new"><span class="new-chat-icon">＋</span>New chat<kbd>Ctrl K</kbd></button>
+  <button class="side-action" id="openMemory"><span class="side-icon">◷</span>Memory</button>
+  <div class="history-heading">Your chats</div><div class="chat-list" id="chatList"></div>
+  <div class="sidebar-bottom"><div class="profile"><div class="profile-avatar">N</div><div class="profile-copy"><strong>Neural</strong><small>Local workspace</small></div><span class="online-dot"></span></div></div>
+</aside>
+<div class="sidebar-scrim" id="scrim"></div>
+<main class="main-area">
+<header class="topbar">
+  <div class="topbar-left"><button class="icon-btn menu-btn" id="menuBtn">☰</button><button class="model-selector" type="button"><span id="model">Connecting…</span><span class="model-chevron">⌄</span></button></div>
+  <div class="topbar-right"><span class="privacy-label"><span class="privacy-dot"></span><span id="accountEmail">Account</span></span><button class="icon-btn memory-top" id="memoryTop" title="Memory">◷</button><button class="icon-btn" id="logout" title="Sign out">↪</button></div>
+</header>
+<section class="chat-viewport" id="chatViewport">
+  <div class="welcome" id="welcome"><div class="welcome-mark">✳</div><h1>What’s on your mind?</h1><p>Ask anything, work through an idea, or make something useful.</p>
+    <div class="suggestions">
+      <button class="suggestion" data-prompt="Explain a difficult topic in simple terms."><span class="suggestion-icon">◉</span><span><b>Learn</b><small>Make a complex topic easy to understand</small></span><span class="suggestion-arrow">↗</span></button>
+      <button class="suggestion" data-prompt="Help me write a clear, polished piece of text."><span class="suggestion-icon">✎</span><span><b>Write</b><small>Draft, edit, and improve your words</small></span><span class="suggestion-arrow">↗</span></button>
+      <button class="suggestion" data-prompt="Help me debug this code and explain the fix."><span class="suggestion-icon">⌘</span><span><b>Code</b><small>Build something or solve a bug</small></span><span class="suggestion-arrow">↗</span></button>
+      <button class="suggestion" data-prompt="Help me research a topic and find reliable sources."><span class="suggestion-icon">⌕</span><span><b>Research</b><small>Explore a question with web search</small></span><span class="suggestion-arrow">↗</span></button>
+    </div>
+  </div>
+  <div class="messages" id="messages" aria-live="polite"></div><div class="bottom-anchor" id="bottomAnchor"></div>
+</section>
+<div class="composer-wrap">
+  <form class="composer" id="form">
+    <textarea id="prompt" rows="1" placeholder="Message Neural" required aria-label="Message Neural"></textarea>
+    <div class="composer-bottom"><div class="composer-tools">
+      <label class="search-toggle"><input id="search" type="checkbox"><span class="toggle-track"><i></i></span><span>Search the web</span></label>
+      <span class="composer-note">Answers may be inaccurate. Verify important details.</span>
+    </div><div class="composer-right"><span class="keyboard-hint">Enter to send</span><button id="send" class="send-btn" aria-label="Send message" title="Send message"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button></div></div>
+  </form><p class="disclaimer">Your chats and memories are private to your account. Usage limits apply.</p>
+</div>
+</main></div>
+<div class="modal-backdrop" id="memoryModal" aria-hidden="true"><section class="memory-modal" role="dialog" aria-modal="true" aria-labelledby="memoryTitle">
+  <div class="modal-head"><div><div class="modal-icon">◷</div><h2 id="memoryTitle">Memory</h2><p>Saved details Neural can use to make future conversations more helpful.</p></div><button class="icon-btn" id="closeMemory">×</button></div>
+  <form id="memoryForm" class="memory-add"><input id="memoryInput" maxlength="500" placeholder="Add something to remember…" required><button type="submit">Save</button></form>
+  <div class="memory-list" id="memoryList"><div class="memory-empty">Loading memories…</div></div>
+  <div class="modal-foot"><span>Private to your account.</span><button id="doneMemory">Done</button></div>
+</section></div>
+<div id="authGate" class="auth-gate" hidden><form id="authForm" class="auth-card"><div class="welcome-mark">✳</div><h1 id="authTitle">Welcome to Neural</h1><p id="authSubtitle">Sign in to access your private chats and memories.</p><label>Email<input id="authEmail" type="email" autocomplete="email" required maxlength="254"></label><label>Password<input id="authPassword" type="password" autocomplete="current-password" required minlength="10" maxlength="128"></label><button id="authSubmit" type="submit">Sign in</button><p id="authError" class="auth-error"></p><button id="authSwitch" type="button" class="auth-switch">Create an account</button></form></div>
+<script defer src="/static/app.js?v=accounts-20261103-fix1"></script>
+</body></html>
