@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>API keys · Neural AI</title><link rel="icon" href="/favicon.ico"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#0d0a14"><link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Neural AI"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="stylesheet" href="/static/css/style.css">
+</head><body>
+<div class="wrap" id="page" hidden>
+  <h1>API keys</h1>
+  <p class="lead">Keys let your own apps call the Neural API. A key is shown once when you create it, and only a hash is stored on our servers. See the <a href="/doc">docs</a> to get started.</p>
+  <div id="secretBox"></div>
+  <div class="card" style="margin-bottom:22px">
+    <form class="row" id="createForm"><input class="input" id="keyName" maxlength="60" placeholder="Key name, e.g. My website" aria-label="Key name"><button class="btn" id="createBtn">Generate key</button></form>
+    <div class="err" id="err"></div>
+  </div>
+  <div class="card"><div class="tbl-scroll"><table class="tbl"><thead><tr><th>Name</th><th>Key</th><th>Created</th><th>Last used</th><th>Tokens today</th><th>Status</th><th></th></tr></thead><tbody id="rows"></tbody></table></div>
+  <p class="muted" id="empty" hidden>No keys yet. Generate your first one above.</p></div>
+</div>
+<script src="/static/js/common.js"></script>
+<script src="/static/js/keys.js"></script>
+<script src="/static/js/pwa.js"></script>
+</body></html>

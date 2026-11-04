@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Policy · Neural AI</title><link rel="icon" href="/favicon.ico"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#0d0a14"><link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Neural AI"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="stylesheet" href="/static/css/style.css">
+</head><body>
+<div class="wrap"><h1>Policy</h1><p class="lead">How Neural AI handles your data, and the rules for using the service and the API. This is a plain-language policy, not legal advice; the operator of this deployment should review it before public launch.</p>
+<div class="doc">
+<nav class="toc"><a href="#privacy">Privacy</a><a href="#data">Data handling</a><a href="#keys">API key security</a><a href="#use">Acceptable use</a><a href="#accounts">Account responsibilities</a><a href="#limits">Limits &amp; availability</a></nav>
+<div>
+<section id="privacy"><h2>Privacy policy</h2>
+<p>We collect only what the service needs: your username, a salted password hash, your chats, the memories you save, usage counters (requests and characters per day), and API key metadata. We do not sell your data. Chats and memories are tied to your account and every query is scoped to it.</p>
+<p>Messages you send are processed by the AI model configured by the operator of this deployment to produce replies. If you turn on <strong>Search the web</strong>, your message text is sent to a web search service to fetch results.</p></section>
+
+<section id="data"><h2>Data handling</h2>
+<ul><li>Passwords are stored only as salted PBKDF2-HMAC-SHA256 hashes.</li><li>You can delete any chat or memory at any time in the app; deletion removes it from the database.</li><li>Sessions use a signed, HTTP-only cookie.</li><li>We do not collect or send email. Because there is no email recovery, keep your password safe.</li><li>To delete your account and data entirely, contact the operator of this deployment.</li></ul></section>
+
+<section id="keys"><h2>API key security</h2>
+<ul><li>A key is displayed once, when you create it. Only its SHA-256 hash is stored.</li><li>Treat keys like passwords: never put them in public code, client-side pages, screenshots or chats.</li><li>Revoke a key from the <a href="/keys">API keys</a> page if you think it has leaked. Revocation is immediate.</li><li>You are responsible for all activity performed with your keys.</li></ul></section>
+
+<section id="use"><h2>Acceptable use</h2>
+<p>Do not use Neural AI or its API to:</p>
+<ul><li>break the law or infringe others' rights;</li><li>generate malware, run scams or phishing, or harass, threaten or exploit people;</li><li>attempt to bypass rate limits, share keys to evade limits, or probe the service for weaknesses without permission;</li><li>send personal data of other people without a legitimate reason;</li><li>present AI output as professional medical, legal or financial advice.</li></ul>
+<p>We may suspend accounts or revoke keys that break these rules.</p></section>
+
+<section id="accounts"><h2>Account responsibilities</h2>
+<ul><li>Keep your password private.</li><li>One person per account; do not impersonate others.</li><li>Keep your information accurate and tell us if you suspect unauthorized access.</li><li>AI replies can be wrong. Check important information yourself.</li></ul></section>
+
+<section id="limits"><h2>Rate limits and service limitations</h2>
+<ul><li>Web chat on the Free plan has 10,000 tokens per day per account (shown in the sidebar; a token is roughly 4 characters, and your message plus the reply both count).</li><li>The Free plan allows 3 active API keys and 3 new keys per day, and each key has 10,000 tokens per day. The API also allows 30 requests per minute per key and 500 requests per day per account. Exceeding limits returns HTTP 429.</li><li>Replies have a maximum length, and requests have a maximum size.</li><li>The service is provided as is, without uptime guarantees. The AI model may be unavailable or slow, and limits may change.</li></ul></section>
+</div></div></div>
+<script src="/static/js/common.js"></script><script src="/static/js/docs.js"></script>
+<script src="/static/js/pwa.js"></script>
+</body></html>
