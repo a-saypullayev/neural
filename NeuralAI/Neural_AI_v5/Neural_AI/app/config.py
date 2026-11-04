@@ -52,18 +52,18 @@ SIGNUPS_PER_IP_HOUR = _int("SIGNUPS_PER_IP_HOUR", 5)
 # Extra comma-separated email domains to refuse (added to the built-in throwaway-mail list).
 EXTRA_BLOCKED_EMAIL_DOMAINS = {d.strip().lower() for d in os.getenv("EXTRA_BLOCKED_EMAIL_DOMAINS", "").split(",") if d.strip()}
 
-# Web chat limits
-DAILY_REQUESTS = _int("DAILY_REQUESTS", 25)
-DAILY_INPUT_CHARS = _int("DAILY_INPUT_CHARS", 15000)
-MAX_MESSAGE_CHARS = _int("MAX_MESSAGE_CHARS", 8000)
-MAX_OUTPUT_TOKENS = _int("MAX_OUTPUT_TOKENS", 1024)
+# Web chat limits - realistic
+DAILY_REQUESTS = _int("DAILY_REQUESTS", 100)           
+DAILY_INPUT_CHARS = _int("DAILY_INPUT_CHARS", 100000)  
+MAX_MESSAGE_CHARS = _int("MAX_MESSAGE_CHARS", 20000)   
+MAX_OUTPUT_TOKENS = _int("MAX_OUTPUT_TOKENS", 8192)   
 
 # API limits
-API_RATE_LIMIT_PER_MIN = _int("API_RATE_LIMIT_PER_MIN", 30)
-API_DAILY_REQUESTS = _int("API_DAILY_REQUESTS", 500)
-API_MAX_OUTPUT_TOKENS = _int("API_MAX_OUTPUT_TOKENS", 2048)
-API_MAX_INPUT_CHARS = _int("API_MAX_INPUT_CHARS", 32000)
-API_MAX_MESSAGES = _int("API_MAX_MESSAGES", 50)
+API_RATE_LIMIT_PER_MIN = _int("API_RATE_LIMIT_PER_MIN", 60)    
+API_DAILY_REQUESTS = _int("API_DAILY_REQUESTS", 10000)            
+API_MAX_OUTPUT_TOKENS = _int("API_MAX_OUTPUT_TOKENS", 16384)      
+API_MAX_INPUT_CHARS = _int("API_MAX_INPUT_CHARS", 120000)          
+API_MAX_MESSAGES = _int("API_MAX_MESSAGES", 100)                   
 
 # Optional: the public address of this site (e.g. https://neural-6mzi.onrender.com). Used for the Windows app download.
 PUBLIC_URL = os.getenv("PUBLIC_URL", "").strip().rstrip("/")
@@ -71,10 +71,10 @@ PUBLIC_URL = os.getenv("PUBLIC_URL", "").strip().rstrip("/")
 PLANS = {
     "free": {
         "name": "Free",
-        "chat_tokens_per_day": _int("FREE_CHAT_TOKENS_PER_DAY", 10000),      # web chat, per account
-        "max_active_keys": _int("FREE_MAX_ACTIVE_KEYS", 3),                  # API keys alive at once
+        "chat_tokens_per_day": _int("FREE_CHAT_TOKENS_PER_DAY", 500000),      # web chat, per account
+        "max_active_keys": _int("FREE_MAX_ACTIVE_KEYS", 6),                  # API keys alive at once
         "keys_per_day": _int("FREE_KEYS_PER_DAY", 3),                        # API keys created per UTC day
-        "tokens_per_key_per_day": _int("FREE_TOKENS_PER_KEY_PER_DAY", 10000),  # each API key's own allowance
+        "tokens_per_key_per_day": _int("FREE_TOKENS_PER_KEY_PER_DAY", 150000),  # each API key's own allowance
     },
 }
 DEFAULT_PLAN = "free"
